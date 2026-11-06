@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lemba Studio</title>
+  <meta name="description" content="Lemba Studio. Coming soon.">
+
+  <!-- Graffiti fonts (need an internet connection; the CSS has bold fallbacks if offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rubik+Spray+Paint&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Roughens the edges of the lettering so it looks sprayed, not typeset -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </svg>
+
+  <main class="stage">
+    <div class="sheet" id="sheet">
+
+      <!-- Older posters pasted underneath -->
+      <div class="under under--a torn" data-seed="11" aria-hidden="true">
+        <span class="mark">?</span>
+      </div>
+      <div class="under under--b torn" data-seed="23" aria-hidden="true"></div>
+
+      <!-- The poster on top -->
+      <div class="poster" id="poster">
+        <h1 class="name">
+          <span class="word word--one">Lemba</span>
+          <span class="word word--two">Studio</span>
+        </h1>
+
+        <span class="drip drip--1" aria-hidden="true"></span>
+        <span class="drip drip--2" aria-hidden="true"></span>
+        <span class="drip drip--3" aria-hidden="true"></span>
+
+        <p class="tease" id="tease">
+          <span class="tease__text" id="teaseText">Coming soon</span><span class="dots" aria-hidden="true"><i>.</i><i>.</i><i>.</i></span>
+        </p>
+      </div>
+
+      <!-- The curling corner -->
+      <div class="flap" id="flap" aria-hidden="true"><div class="flap__paper"></div></div>
+
+      <span class="tape tape--l" aria-hidden="true"></span>
+      <span class="tape tape--r" aria-hidden="true"></span>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
